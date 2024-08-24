@@ -4,12 +4,17 @@ import java.io.Serializable;
 
 import com.devsuperior.bds03.entities.Employee;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
 public class EmployeeDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
+	@Email(message = "Email inválido")
 	private String email;
+	@NotNull(message = "Campo requerido")
 	private Long departmentId;
 	
 	public EmployeeDTO() {
